@@ -1,0 +1,70 @@
+a {color:#DE9125;}
+
+#teaser {
+  background-color:#DE9125;
+  background: url(../../images/textures/wood_traj.jpg) repeat 0 0!important;
+  border-top:1px solid #000
+}
+
+.slide-content h2, .slide-content-left h2 {
+  font-weight:bold
+}
+
+.slide-content p, .slide-content-center p , .slide-content-left p, .slide-content-right ul li p {
+  color:#ccc;
+  text-shadow: none;
+}
+
+.slide-content a, .slide-content-left a {
+  color:#fff;
+  text-shadow: none;
+}
+
+.slide-content a.big-button, .slide-content-left a.big-button  {
+  background: #da7f00; /* for non-css3 browsers */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#da7f00', endColorstr='#945600'); /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from(#da7f00), to(#945600)); /* for webkit browsers */
+  background: -moz-linear-gradient(center top,  #da7f00,  #945600); /* for firefox 3.6+ */ 
+  border: 1px solid #844d00
+}
+
+.slide-content a:hover.big-button, .slide-content-left a:hover.big-button  {
+  background: #6f4100; /* for non-css3 browsers */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#da7f00', endColorstr='#6f4100'); /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from(#da7f00), to(#6f4100)); /* for webkit browsers */
+  background: -moz-linear-gradient(center top,  #da7f00,  #6f4100); /* for firefox 3.6+ */ 
+}
+
+.calltoaction a.button  {
+  background: #da7f00; /* for non-css3 browsers */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#da7f00', endColorstr='#945600'); /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from(#da7f00), to(#945600)); /* for webkit browsers */
+  background: -moz-linear-gradient(center top,  #da7f00,  #945600); /* for firefox 3.6+ */ 
+  border: 1px solid #844d00
+}
+
+.calltoaction a:hover.button  {
+  background: #6f4100; /* for non-css3 browsers */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#da7f00', endColorstr='#6f4100'); /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from(#da7f00), to(#6f4100)); /* for webkit browsers */
+  background: -moz-linear-gradient(center top,  #da7f00,  #6f4100); /* for firefox 3.6+ */ 
+}
+
+a.contact-button  {
+  background: #da7f00; /* for non-css3 browsers */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#da7f00', endColorstr='#945600'); /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from(#da7f00), to(#945600)); /* for webkit browsers */
+  background: -moz-linear-gradient(center top,  #da7f00,  #945600); /* for firefox 3.6+ */ 
+  border: 1px solid #324262
+}
+
+a:hover.contact-button  {
+  background: #6f4100; /* for non-css3 browsers */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#da7f00', endColorstr='#6f4100'); /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from(#da7f00), to(#6f4100)); /* for webkit browsers */
+  background: -moz-linear-gradient(center top,  #da7f00,  #6f4100); /* for firefox 3.6+ */ 
+}
+
+#footer-copy h6 {
+  color:#DE9125;
+}

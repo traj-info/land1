@@ -1,0 +1,76 @@
+a {color:#6587cd;}
+
+#teaser {
+  background-color:#516ea9;
+  border-top:1px solid #1c2434;
+  background: url(../../images/textures/liquid.jpg) repeat 0 0!important;
+}
+
+.slide-content h2, .slide-content-left h2, .slide-content-center h2, .slide-content-right h5 {
+  font-weight:bold;
+  color:#fff!important
+}
+
+.slide-content p, .slide-content-center p , .slide-content-left p, .slide-content-right ul li p {
+  color:#fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4), 0 0 0 rgba(255, 255, 255, 0);
+}
+
+.slide-content a, .slide-content-left a {
+  color:#fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4), 0 0 0 rgba(255, 255, 255, 0);
+  text-decoration:underline
+}
+
+.slide-content a:hover, .slide-content-left a:hover {
+  text-decoration:none
+}
+
+.slide-content a.big-button, .slide-content-left a.big-button  {
+  background: #4a67a0; /* for non-css3 browsers */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6691e7', endColorstr='#4a67a0'); /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from(#6691e7), to(#4a67a0)); /* for webkit browsers */
+  background: -moz-linear-gradient(center top,  #6691e7,  #4a67a0); /* for firefox 3.6+ */ 
+  border: 1px solid #324262
+}
+
+.slide-content a:hover.big-button, .slide-content-left a:hover.big-button  {
+  background: #435c8e; /* for non-css3 browsers */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6691e7', endColorstr='#435c8e'); /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from(#6691e7), to(#435c8e)); /* for webkit browsers */
+  background: -moz-linear-gradient(center top,  #6691e7,  #435c8e); /* for firefox 3.6+ */ 
+}
+
+.calltoaction a.button  {
+  background: #4a67a0; /* for non-css3 browsers */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6691e7', endColorstr='#4a67a0'); /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from(#6691e7), to(#4a67a0)); /* for webkit browsers */
+  background: -moz-linear-gradient(center top,  #6691e7,  #4a67a0); /* for firefox 3.6+ */ 
+  border: 1px solid #324262
+}
+
+.calltoaction a:hover.button  {
+  background: #435c8e; /* for non-css3 browsers */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6691e7', endColorstr='#435c8e'); /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from(#6691e7), to(#435c8e)); /* for webkit browsers */
+  background: -moz-linear-gradient(center top,  #6691e7,  #435c8e); /* for firefox 3.6+ */ 
+}
+
+a.contact-button  {
+  background: #4a67a0; /* for non-css3 browsers */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6691e7', endColorstr='#4a67a0'); /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from(#6691e7), to(#4a67a0)); /* for webkit browsers */
+  background: -moz-linear-gradient(center top,  #6691e7,  #4a67a0); /* for firefox 3.6+ */ 
+  border: 1px solid #324262
+}
+
+a:hover.contact-button  {
+  background: #435c8e; /* for non-css3 browsers */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6691e7', endColorstr='#435c8e'); /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from(#6691e7), to(#435c8e)); /* for webkit browsers */
+  background: -moz-linear-gradient(center top,  #6691e7,  #435c8e); /* for firefox 3.6+ */ 
+}
+
+#footer-copy h6 {
+  color:#6587cd;
+}
