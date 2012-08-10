@@ -5,12 +5,16 @@
 **/
 
 $(function() {
-  // load captcha question
-  if ($('#captcha-img').length) {
-    $.get('captcha.php?generate', function(response) {
-      $('#captcha-img').html(response);
-    }, 'html');
-  }
+
+<!-- Google Plus -->
+  window.___gcfg = {lang: 'pt-BR'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+
 
   // init Parallax slider
   var $pxs_container = $('#pxs_container');
@@ -20,12 +24,13 @@ $(function() {
   if ($("#contactform").length > 0) {
     $("#contactform").validate({ rules: { name: "required",
                                          email: { required: true, email: true },
-                                         captcha: {required: true, remote: 'captcha.php' },
+                                         telefone: "required",
                                          message: "required"},
-                                messages: { name: "This field is required.",
-                                            email: { required: "This field is required.",
-                                                     email: "Please enter a valied email address."},
-                                            captcha: 'Are you sure you\'re a human? Please recheck.'},
+                                messages: { name: "Preencha seu nome.",
+											telefone: "Preencha seu telefone.",
+											message: "Detalhe como podemos lhe atender.",
+                                            email: { required: "Preencha seu e-mail.",
+                                                     email: "Por favor, digite um endereço de e-mail válido."}},
                                 submitHandler: function(form) {  $(form).ajaxSubmit({dataType: 'json', success: contactFormResponse}); }
                               });
   }
@@ -36,14 +41,14 @@ $(function() {
       if (response.responseMsg == 'ajax') {
         alert('Error - this script can only be invoked via an AJAX call.');
       } else if (response.responseMsg == 'notsent') {
-        alert('We are having some mail server issues. Please refresh the page or try again later.');
+        alert('Houve um problema no envio da mensagem. Por favor, envie-a diretamente por e-mail (sites@trajettoria.com).');
       } else {
-        alert('Undocumented error. Please refresh the page and try again.');
+        alert('Houve um problema no envio da mensagem. Por favor, envie-a diretamente por e-mail (sites@trajettoria.com).');
       }
     } else if (response.responseStatus == 'ok') {
-      alert('Thank you for contacting us! We\'ll get back to you ASAP.');
+      alert('Obrigado pela mensagem! Em breve nos entraremos em contato.');
     } else {
-      alert('Undocumented error. Please refresh the page and try again.');
+      alert('Houve um problema no envio da mensagem. Por favor, envie-a diretamente por e-mail (sites@trajettoria.com).');
     }
   } // contactFormResponse
 
@@ -52,17 +57,20 @@ $(function() {
     $(this).attr('rel', $(this).data('gal'));
   });
   $(".gallery a[rel^='prettyPhoto']").prettyPhoto({ animationSpeed:'slow',
-                                                    theme:'dark_rounded',
+                                                    theme:'light_rounded',
                                                     slideshow:4000,
                                                     autoplay_slideshow: false,
                                                     social_tools: ''});
   
 
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) {return;}
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#appId=152938731463199&xfbml=1";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
+ 
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=268548303245278";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+
 }); // onload

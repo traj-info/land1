@@ -2,7 +2,7 @@ a {color:#DE9125;}
 
 #teaser {
   background-color:#DE9125;
-  background: url(../../images/textures/wood_traj.jpg) repeat 0 0!important;
+  background: url(../../images/textures/wood_traj.jpg) repeat 0 0;
   border-top:1px solid #000
 }
 
