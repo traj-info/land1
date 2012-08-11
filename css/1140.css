@@ -100,7 +100,8 @@ img {
 	}
 	
 	#gallery {
-		height: 200px!important
+		height: 200px !important;
+
 	}
 	
 	.box h3, .calltoaction h4 {
@@ -127,6 +128,27 @@ img {
 	-webkit-text-size-adjust: none;
 	}
 	
+	#gallery
+	{
+		display: none;
+	}
+	
+	.row h2
+	{
+		font-size: 36px !important;
+	}
+	
+	.slide-content p
+	{
+		font-size: 18px !important;
+	}
+	
+	h4.section-title span {
+		border: 0 !important;
+		background: none !important;
+		font-size: 16px !important;
+	}
+	
 	.row, body, .container {
 	width: 100%;
 	min-width: 0;
@@ -145,4 +167,13 @@ img {
 	padding-right: 20px;
 	}
 
+	.sixcol.last
+	{
+		margin-top: 20px !important;
+	}
+	
+	.calltoaction
+	{
+		display: none;
+	}
 }

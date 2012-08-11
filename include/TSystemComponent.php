@@ -25,12 +25,18 @@ class TSystemComponent
     {
         //System variables
         $settings['path'] = 'http://www.trajettoria.com';
-     //   $settings['site_name'] = 'QUESTIONARIO';
 
         //Database variables
         $settings['dbname'] = 'traj_rfp';
+		
+		/*
         $settings['dbusername'] = 'traj_rfp';
         $settings['dbpassword'] = 'tr90PZAS';
+		*/
+		
+        $settings['dbusername'] = 'root';
+        $settings['dbpassword'] = 'krieger';
+		
         $settings['dbhost'] = 'localhost';
        // $settings['users_table'] = 'users';
         

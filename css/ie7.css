@@ -1,0 +1,76 @@
+.onecol {
+width: 4.7%;
+}
+
+.twocol {
+width: 13.2%;
+}
+
+.threecol {
+width: 22.05%;
+}
+
+.fourcol {
+width: 30.6%;
+}
+
+.fivecol {
+width: 39%;
+}
+
+.sixcol {
+width: 48%;
+}
+
+.sevencol {
+width: 56.75%;
+}
+
+.eightcol {
+width: 61.6%;
+}
+
+.ninecol {
+width: 74.05%;
+}
+
+.tencol {
+width: 82%;
+}
+
+.elevencol {
+width: 91.35%;
+}
+
+#social-icons li span {
+  display:none
+}
+
+#social-icons li img {
+  float:left;
+  margin-right:0
+}
+
+.slide-media-small {
+  float: left;
+  margin-left: 0;
+  margin-top: -10px;
+  width:350px
+}
+
+.slide-content-right {
+  float: right;
+  margin-right: 40px;
+  margin-top: 100px;
+  width: 300px;
+}
+
+h4.section-title span {
+  line-height:35px;
+  border:0
+}
+
+.options-panel ul li {
+  width:48px;
+  height:48px;
+}

@@ -1,3 +1,29 @@
+<?php
+function create_guid($namespace = '') {
+	static $guid = '';
+	$uid = uniqid("", true);
+	$data = $namespace;
+	$data .= $_SERVER['REQUEST_TIME'];
+	$data .= $_SERVER['HTTP_USER_AGENT'];
+	$data .= $_SERVER['REMOTE_ADDR'];
+	$data .= $_SERVER['REMOTE_PORT'];
+	$hash = strtoupper(hash('ripemd128', $uid . $guid . md5($data)));
+	$guid = substr($hash,  0,  8) .
+	'-' .
+	substr($hash,  8,  4) .
+	'-' .
+	substr($hash, 12,  4) .
+	'-' .
+	substr($hash, 16,  4) .
+	'-' .
+	substr($hash, 20, 12);
+	return $guid;
+}
+
+// create unique key
+$visit_key = create_guid();
+
+?>
 <!doctype html>
 <html lang="pt">
 <head>
@@ -25,8 +51,20 @@
   <script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
 
   <script type="text/javascript">
-  $(document).ready(function(){
+  
+    function getParameterByName(name)
+	{
+	  name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+	  var regexS = "[\\?&]" + name + "=([^&#]*)";
+	  var regex = new RegExp(regexS);
+	  var results = regex.exec(window.location.search);
+	  if(results == null)
+		return "";
+	  else
+		return decodeURIComponent(results[1].replace(/\+/g, " "));
+	}
 
+  $(document).ready(function(){
 	width = $(window).width();
 	new_left = (-1)*((1903 - width)/2);
 
@@ -38,8 +76,28 @@
 	
 		$('#teaser').css("background-position", new_left + "px 0");
 	});
+	
+	res = screen.width + "x" + screen.height;
+	from = getParameterByName('f');
+	visit_key = '<?php echo $visit_key; ?>';
+	$('#r').val(res);
+	$('#f').val(from);
+	$('#k').val(visit_key);
   });
   </script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-34014052-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>  
 </head>
 <body>
   <div id="fb-root"></div>
@@ -111,20 +169,6 @@
     </div>
   </div>
 
-<!--
-<div class="row section">
-<ul id="partner-list">
-<li><a href="#"><img src="images/logos/logo_fmusp.png" alt="Faculdade de Medicina da USP" /></a></li>
-<li><a href="#"><img src="images/logos/logo_clave.png" alt="Clave Biotech" /></a></li>
-<li><a href="#"><img src="images/logos/logo_unifesp.png" alt="Escola Paulista de Medicina - Unifesp" /></a></li>
-<li><a href="#"><img src="images/logos/logo_i2bio.png" alt="2Bio - Instituto de Bioinformática e Biotecnologia" /></a></li>
-<li class="last"><a href="#"><img src="images/logos/logo_unicamp.png" alt="Unicamp" /></a></li>
-</ul>
-<div class="clear"></div>
-</div>
-	
--->
-  
     <div class="row section">
       <h4 class="section-title"><span>Descubra o que podemos oferecer</span></h4>
       <div class="box fourcol">
@@ -150,7 +194,12 @@
         <div id="contact-form">
 		  <a name="contato"></a>
           <h3>Como podemos lhe atender?</h3>
-          <form id="contactform" action="http://webdesign.trajettoria.com/send_rfp.php?f=hotsite" method="post">
+          <form id="contactform" action="send_rfp.php" method="post">
+		  
+		  <input type="hidden" name="f" id="f" value="" />
+		  <input type="hidden" name="r" id="r" value="" />
+		  <input type="hidden" name="k" id="k" value="" />
+		  
             <p>
               <label for="name">Nome *</label>
               <input type="text" name="name" id="name" class="input-field">
@@ -161,7 +210,7 @@
             </p>
             <p>
               <label for="email">Telefone *</label>
-              <input type="text" name="telefone" id="telefone" class="input-field">
+              <input type="text" name="telefone" id="telefone" class="input-field" value="">
             </p>
             <p>
               <label for="message">Sua mensagem *</label>
@@ -174,11 +223,11 @@
       <div class="box sixcol last methods">
         <h3>Credibilidade: a nossa marca!</h3>
         <h4>Legislação</h4>
-        <p>Nós respeitamos todas as normas do CRM que se aplicam à publicidade médica. Também respeitamos as políticas institucionais de acordo com o seu vínculo institucional!/p>
+        <p>Nós respeitamos todas as normas do CFM que se aplicam à publicidade médica. Também respeitamos as políticas institucionais de acordo com o seu vínculo institucional!/p>
         <h4>Informação protegida</h4>
         <p>Nós adotamos procedimentos que aumentam (e muito!) a segurança de sua informação! São backups, upgrades de segurança, anti-vírus, firewall e tudo que possa servir para melhorar a sua experiência como cliente da Trajettoria! E a experiência dos SEUS visitantes!</p>
         <h4>Conheça melhor!</h4>
-        <h5>Preencha o formulário ao lado e nós entraremos em contato com mais informações!</h5>
+        <h5>Preencha o formulário e nós entraremos em contato com mais informações!</h5>
 		</div>
       <div class="clear"></div>
     </div>
@@ -212,3 +261,4 @@
 <script src="js/common.js" type="text/javascript"></script>
 </body>
 </html>
+<?php require_once('track_visit.php'); ?>

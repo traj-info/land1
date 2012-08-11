@@ -1,12 +1,5 @@
-/*
- * Spectaculous v1.0
- * (c) Web factory Ltd
- * www.webfactoryltd.com
-**/
-
 $(function() {
 
-<!-- Google Plus -->
   window.___gcfg = {lang: 'pt-BR'};
 
   (function() {
@@ -30,26 +23,21 @@ $(function() {
 											telefone: "Preencha seu telefone.",
 											message: "Detalhe como podemos lhe atender.",
                                             email: { required: "Preencha seu e-mail.",
-                                                     email: "Por favor, digite um endereÁo de e-mail v·lido."}},
-                                submitHandler: function(form) {  $(form).ajaxSubmit({dataType: 'json', success: contactFormResponse}); }
+                                                     email: "Por favor, digite um endere√ßo de e-mail v√°lido."}},
+                                submitHandler: function(form) {  $(form).ajaxSubmit({dataType: 'html', success: contactFormResponse}); }
                               });
   }
   
     // handle contact form AJAX response
   function contactFormResponse(response) {
-    if (response.responseStatus == 'err') {
-      if (response.responseMsg == 'ajax') {
-        alert('Error - this script can only be invoked via an AJAX call.');
-      } else if (response.responseMsg == 'notsent') {
-        alert('Houve um problema no envio da mensagem. Por favor, envie-a diretamente por e-mail (sites@trajettoria.com).');
-      } else {
-        alert('Houve um problema no envio da mensagem. Por favor, envie-a diretamente por e-mail (sites@trajettoria.com).');
-      }
-    } else if (response.responseStatus == 'ok') {
-      alert('Obrigado pela mensagem! Em breve nos entraremos em contato.');
-    } else {
+
+  if (response == '') { 
+	  //alert(response);
       alert('Houve um problema no envio da mensagem. Por favor, envie-a diretamente por e-mail (sites@trajettoria.com).');
-    }
+    } else 	{
+      alert('Obrigado pela mensagem! Em breve n√≥s entraremos em contato.');
+	  document.location.href = "http://www.trajettoria.com";
+	}
   } // contactFormResponse
 
   // Lightbox gallery

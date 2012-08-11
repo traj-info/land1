@@ -52,6 +52,13 @@ class TDbConnector extends TSystemComponent
 
     //-----------------------------------------------------------------------------------------
 
+	function GetDbLink()
+	{
+		return $this->dblink;
+	}
+	
+	//-----------------------------------------------------------------------------------------
+	
     // Function: SetDbName, purpose: change the current db
     function SetDbName($strdbname)
     {
